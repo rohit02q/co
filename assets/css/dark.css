@@ -1,0 +1,144 @@
+/* Theme variables */
+:root {
+    --background-light: #ffffff;
+    --text-light: hsl(var(--hue-color), 56%, 12%);
+    --background-dark: #212121;
+    --text-dark: #ffffff;
+  }
+  
+/* Toggle styles */
+.mode-toggle-label {
+    display: inline-block;
+    width: 51.5px;
+    height: 26px;
+    background-color: #03033c; /* Dark blue */
+    background-image: radial-gradient(white 0.4px, transparent 0.4px), radial-gradient(white 0.4px, transparent 0.4px);
+    background-size: 20px 25px, 7px 7px;
+    background-position: 0 0, 25px 15px; 
+    border-radius: 50px;
+    position: relative;
+    top:5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+  }
+  
+  .mode-toggle-label::after {
+    content: '\1F319'; /* Crescent moon character */
+    
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: #fff;
+    background: transparent;
+    border-radius: 50%;
+    transition: transform 0.3s ease, content 0.3s ease;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked + .mode-toggle-label {
+    background-color: #87ceeb; /* Sky blue */
+    background-image: linear-gradient(to bottom, #87ceeb, #f5f5dc); /* Gradient for sunny sky */
+  }
+  
+  input[type="checkbox"]:checked + .mode-toggle-label::after {
+    content: '\2600';
+    color:rgb(252, 154, 7); /* Sun character */
+    transform: translateX(26px) rotate(360deg);
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Light theme */
+  body.light-theme {
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+  #contact2{
+    width:170px;
+    text-align: center;
+    position: relative;
+    bottom:30px;
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color:#1a1d23;
+    color: var(--text-dark);
+  }
+  body.dark-theme .l-header{
+    background-color:#000000;
+        box-shadow: 0 3px 200px var(--second-color);
+
+    
+  }
+  body.dark-theme .l-header .nav__logo{
+    color: #fff;
+  }
+  body.dark-theme .l-header .nav__link{
+    color: #fff;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  body.light-theme .theme-toggle i {
+    color: var(--text-light);
+  }
+  
+  body.dark-theme .theme-toggle i {
+    color: var(--text-dark);
+  }
+  body.dark-theme .contact__input{
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    border: 1.5px solid #333333;
+  }
+  /* Icon rotation for a smooth transition */
+  .theme-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  body.dark-theme .toggle-icon {
+    transform: rotate(180deg);
+  }
+  body.dark-theme .nav__toggle{
+    color: #fff;
+  }
+  body.dark-theme .home__social-icon{
+    color:#fff
+  }
+   .home__title{
+    color:var(--second-color);
+  }
+  body.dark-theme .home__social-icon{
+    transition: transform 0.3s ease;
+  }
+  body.light-theme .home__title {
+    transition: transform 0.3s ease;
+  }
+  
+  
+  /* Smooth theme change */
+  body,.l-header {
+    transition: background-color 0.5s ease, color 0.5s ease;
+      
+  }
+  
+  
